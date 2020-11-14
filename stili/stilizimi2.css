@@ -14,6 +14,7 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0; padding:0; font-size:18px; font-weigh
 .row0, .row0 a{color:#FFFFFF; background-color:#55415F;}
 
 .row1, .row1 a{}
+.row2, .row2 a{}
 
 
 
@@ -23,6 +24,10 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0; padding:0; font-size:18px; font-weigh
 
 /* Hmm i may have shorten the electricity while working on this ID Style Hmmm? AstroWorld?
 #top{display:inline; margin-left:10px; padding-left:10px;} */
+
+/* ^
+   |
+   Nuk ki qka thu s'dita  */ 
 
 
 /* Kombinimet e elementeve*/
@@ -79,6 +84,22 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0; padding:0; font-size:18px; font-weigh
 #header nav ul li:hover{position:static;}
 
 
+/*CSS per menu rreshqitest(slider) here
+---------------------------------------------------------------------------------------------------------------*/
+
+/*Pjesa kryesore(homepage)
+---------------------------------------------------------------------------------------------------------------*/
+#homepage{display:block; position:relative; width:900px; margin:-104px auto 0; padding:30px 0 0 0;}
+
+#services{display:block; width:100%; margin:0 0 50px 0; padding:0;}
+#services ul{margin:0; padding:0; list-style:none;}
+#services ul li{display:block; float:left; width:210px; margin:0 0 0 20px; text-align:center;}
+#services ul li:first-child{margin:0; padding:0; border:none;}
+#services ul li article{}
+#services ul li article img, #services ul li article h2{margin:0 0 20px 0;}
+#services ul li article h2{padding-bottom:20px;}
+#services ul li article p{margin:0; padding:0;}
+
 
 
 
@@ -97,10 +118,26 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0; padding:0; font-size:18px; font-weigh
 
 
 
-
+/* ne pjesen e siperme */
 #header nav{border-bottom:1px solid #EBEBEB;}
 #header nav ul li a:link, #header nav ul li a:visited, #header nav ul li a:hover{color:#999999; background-color:#FFFFFF; border-bottom:2px solid #FFFFFF;}
 #header nav ul li a:hover, #header nav ul li.active a{color:#55415F; background-color:#FFFFFF; border-color:#55415F;}
 #header nav ul li ul li a:link, #header nav ul li ul li a:visited{color:#999999; background-color:#F9F9F9;}
 #header nav ul li ul li a:hover{color:#55415F; background-color:#F9F9F9;}
 #header nav ul ul{border-bottom:1px solid #D5D5D5;}
+
+
+.row2{color:#999999; background-color:#EBEBEB;}
+
+/*
+ne slider
+---------------------------------------------------------------------------------------------------------------*/
+
+/* ne homepage 
+---------------------------------------------------------------------------------------------------------------*/
+#homepage{background-color:#FFFFFF;}
+#services ul li article h2{border-bottom:1px solid #D7D7D7;}
+
+
+
+
