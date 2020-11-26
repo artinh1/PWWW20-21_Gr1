@@ -92,6 +92,19 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0; padding:0; font-size:18px; font-weigh
 #slider ul.flex-direction-nav li a{background:url("images/fotot/prev_next.png") 0 0 no-repeat;}
 
 
+/* Pjesa e latest news me 4 figurimet
+---------------------------------------------------------------------------------------------------------------*/
+#latest{margin:0;}
+#latest ul{margin:0; padding:0; list-style:none;}
+#latest ul li{display:block; float:left; width:225px; margin:0 0 0 20px;}
+#latest ul li:first-child{margin-left:0;}
+#latest ul li article{}
+#latest ul li article h2, #latest ul li article img{margin:0 0 20px 0;}
+#latest ul li article h2{}
+#latest ul li article p{margin:0 0 10px 0; padding:0;}
+#latest ul li article footer{}
+
+
 
 
 
