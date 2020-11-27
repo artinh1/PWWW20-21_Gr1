@@ -1,19 +1,38 @@
+/* general tags   */
+
+html{
+    min-width: 0px;
+}
+
+body{
+    min-width: 800px;
+}
 
 
+main{padding: 5% 7% 5% 7%;
+    
+}
 
-
-h3{color: blueviolet;
+h3{ background-color:#EBEBEB;
+    text-align: center;
+    color: blueviolet;
     font font-size: 50px
     margin-left: 50px;}
 
 
 
-.row{width: 100%;
-       display: flex;
+
+
+
+/*custom classes*/
+
+
+
+.row{ width: 100%;
+      max-height: 30%;  
+    display: flex;
+    flex-wrap: wrap;
           }
-
-
-
 
 
 .col-1{width:8.33%;}
@@ -31,12 +50,16 @@ h3{color: blueviolet;
 
 
 
-div.box{ text-align: center;
+div.box{ 
+         padding: 3%;    
+        text-align: center;
           margin: 20px;}
 
 
-div.icon img{ border-radius: 7px;
+div.icon img{ 
         width: 80%;
+    max-height: 30%;
+    max-width: 80%;
     height:auto;
         }
 
@@ -45,3 +68,24 @@ footter{
     background-color: black
     
 }
+
+
+
+#MlbSection, #UFCSection{display: none;
+      
+}
+
+
+.buttons{background-color:
+    align-items: center;
+}
+
+#ShowLess{
+    
+    display: none;}
+
+
+
+
+
+
