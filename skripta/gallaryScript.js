@@ -9,7 +9,7 @@ var subscribeButton;
 
 function start()
 {
-     MLBsection=document.getElementById("MlbSection");
+     MLBsection=document.getElementById("MLBSection");
      UFCsection=document.getElementById("UFCSection");
      ShowMoreButton=document.getElementById("ShowMore");
      ShowLessButton=document.getElementById("ShowLess");

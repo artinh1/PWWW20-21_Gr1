@@ -1,6 +1,6 @@
 /* general tags   */
 
-html{
+html{ 
     min-width: 0px;
 }
 
@@ -15,13 +15,26 @@ main{padding: 5% 7% 5% 7%;
     
 }
 
-h3{ background-color:#EBEBEB;
+header h1{margin: 0px;
+             padding: 20px 10px 5px 60px;}
+
+
+
+
+#NFLSection h1,#NBASection h1
+,#MLBSection h1,#UFCSection h1{ padding: 5px;
+    background-color:#EBEBEB;
     text-align: center;
-    color: blueviolet;
-    font font-size: 50px
+    color: #593C5D;
+    font font-size:50px
     margin-left: 50px;}
 
-header
+header h4{margin: 0px   ;
+         padding:5px 10px 5px 60px;
+        
+        
+    
+}
 
 
 
@@ -29,8 +42,11 @@ header
 /*custom classes*/
 
 
-.topRow{ margin: 0px;
-      background-color: #593C5D;
+.topRow{ padding:10px 0;
+         font-size:12px; 
+         font-weight:normal;
+         background-color: #593C5D;
+         display: flex;
 }
 
 .topRow p{ font-size: 30px;
@@ -74,29 +90,54 @@ div.icon img{
         }
 
 
-footter{
-    background-color: black
-    
-}
+footer{padding: 20px 10px 10px 30px;
+    background-color: #222222;
+     
+    }
+
+footer p,h2{color: #807D77;
+          margin: 2px;
+       }
+
+footer input{margin: 5px;
+    display: flex;
+    }
 
 
-
-#MlbSection, #UFCSection{display: none;
+#MLBSection, #UFCSection{display: none;
       
 }
 
 
-.buttons{background-color:
+
+.buttons{display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-#ShowLess{
+#ShowMore,#ShowLess{ 
+          font-family:Georgia,"Times New Roman", Times, serif;
+           background-color: #593C5D;
+           border-radius: 7px;
+           color: white;
+           padding:5px 10px 5px 10px; 
+           font-size: 20px;
+            margin-right: 5px;
+            border: none;
     
-    display: none;}
+    
+    
+}
+
+#ShowLess{display: none;}
 
 
 
-.bg-modal{
+
+
+/*   modal styles    */
+
+#BgModal{
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0, 0.7);
@@ -107,19 +148,52 @@ footter{
     align-items: center;
 }
 
-.bg-content{
+
+.bg-content{margin: 0px;
     background-color: white;
     text-align: center;
     width: 30%;
-    height: 20%;
+    height: 22%;
     min-width: 300px;
     min-height: 200px;
+    padding: 0px;
+    position: relative;
 }
 
 .bg-content input{width: 50%;
                   margin:12px auto;
                   display: block;
-} 
+                   padding: 4px;} 
+
+#CloseButton{background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    outline: inherit;
+    cursor: pointer;
+    position: absolute;
+    top: 6px;
+    right: 4px;
+    font-size: 30px;
+    transform: rotate(45deg);
+    
+}
+
+#subscribeButton{  background-color: gainsboro;
+    font-weight: 500;
+    width: 50%;
+}
 
 
+.modalTopbar{ background-color: #593C5D;
+    margin: 0px;
+padding: 15px;
+}
 
+.modalTopbar p{text-align: left;
+       padding: 0px;
+         margin: 0px;
+        font-size: 15px;
+         font-weight: 600;
+}
