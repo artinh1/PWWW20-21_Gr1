@@ -230,6 +230,9 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
 #footer input{color:#7F7D77; background-color:#353535;}
 #footer button{color:#FFFFFF; background-color:#9F7FA9;}
 
+#copyright{padding:20px 0;}
+#copyright p{margin:0; padding: 0;}
+
 
 /*Third Fajll Stilimi*/
 #topbar, #header, #breadcrumb, #container, #footer, #copyright{display:block; width:960px; margin:0 auto;}
