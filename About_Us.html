@@ -10,18 +10,40 @@
 	<meta charset="UTF-8">
   <link href="stili/stilizimi2.css" rel="stylesheet" type="text/css" media="all">
   <link rel="shortcut icon" type="image/png" href="images/fotot/AUSFi.png">
+  <link href="stili/StiliAboutUs.css" rel="stylesheet" type="text/css" media="all">
   <style type="text/css">
-   
-   .about{ background-color:#EBEBEB;border: 10px solid #55415F; }
-   #members { margin-left:auto; margin-right:auto;  }
-   #members{ width:80%; text-align: center; table-layout: fixed;  }
-   
-   td{font-size:13px; font-family:Georgia, "Times New Roman", Times, serif;}
-   th{font-size:16px; font-family:Georgia, "Times New Roman", Times, serif;}
 
-   #webdesc{margin-left: 20px;  padding:0; font-size:16px; text-align:center; line-height:1.6em; }
-   #webdesc figure{text-align:center; }
-   #webdesc p{font-weight: bold;}
+    body{
+      justify-content: center; align-items: center; background-color: #f1f1f1;
+    }
+  /* 
+   #webdesc{margin-left: 20px;  padding:0; font-size:16px; text-align:center; line-height:1.6em;   }
+   #webdesc p{background-color:#55415F; color:white;  margin-bottom:0px; }
+   #webdesc figure{text-align:center; background-color:white; margin-left:235px; margin-right:255px; }
+   #webdesc figure img{border-radius:50%;}
+   #webdesc p{font-weight: bold;} */
+
+   .main-header{  }
+   
+   #aboutteam{text-align:center;  background-color:#55415F; color:white; margin-left:255px; margin-right: 255px; }
+
+   #members { margin-left:auto; margin-right:auto; border-spacing: 20px;}
+
+   #members{ width:1000px; text-align: center; table-layout: fixed; ;  }
+   
+   td{font-size:13px; font-family:Georgia, "Times New Roman", Times, serif; background-color: white}
+   th{font-size:16px; font-family:Georgia, "Times New Roman", Times, serif;}
+   
+
+
+   #info td,th, table #roles td{background-color: #55415F; color:white; }
+   table #roles td{color:#ccc;}
+
+   #info td, #images td{border-radius:7%;}
+
+   td img{border-radius:50%;}
+
+
 
   </style>
 
@@ -84,33 +106,38 @@
 <br>
 <br>
 <br>
-  <div class="about">
-    <div id="webdesc"  >
-        <p>
-          Enquirer Sports Newspaper aims to bring reliability and information to media. We watch and report on sporting events, follow leads for stories and research information... <abbr title="Enquirer Sports Newspaper">ESN</abbr> was found in 2015 by Dexter Bishop, Betty Silva and Jeremy Barrett.
-         </p>
-         <figure>
-         <img src="images/images_about_us/building.jpg" alt="photo of a building">
-         <figcaption><small><em>ESN Building, XYZ city southwest side</em></small></figcaption>
-         </figure>
+  <header class="main-header post-head " style="background-image: url(images/images_about_us/widescreen.jpg)">
+  <div class="vertical">
+    <div class="main-header-content inner">
+      <h1 class="post-title">Enquirer Sports Newspaper aims to bring reliability and information to media. We watch and report on sporting events, follow leads for stories and research information...</h1>    
+      <section class="post-meta">
+      
+      </section>  
+    </div>  
+  </div>
+</header>
 
-    </div>
+<br>
+<br>
+<br>
+<br>
+<div id="aboutteam">
+  <h2>About team members</h2>
 </div>
 
-<br>
-<br>
-<br>
-<br>
-
-<div id = "team" class="about" >
-  <table id="members">
+<div id = "team"  >
+  <table id="members" >
     <thead id="names">
       <th>Dexter Bishop</th><th>Betty Silva</th><th>Jeremy Barrett</th>
+
       
     </thead>
     <tbody id="bio">
-      <tr><td><img src="images/images_about_us/profile1.jpg" alt="photo of Dexter Bishop"></td><td><img src="images/images_about_us/profile2.jpg" alt="photo of Betty Silva"></td><td><img src="images/images_about_us/profile3.jpg" alt="photo of Jeremy Barrett"></td></tr>
-      <tr>
+      <tr id="images"><td><img src="images/images_about_us/profile1.jpg" alt="photo of Dexter Bishop"></td><td><img src="images/images_about_us/profile2.jpg" alt="photo of Betty Silva"></td><td><img src="images/images_about_us/profile3.jpg" alt="photo of Jeremy Barrett"></td></tr>
+      <tr id="roles">
+        <td>Web-developer</td><td>Journalist</td><td>Backend developer</td>
+      </tr>
+      <tr id="info">
         <td>
           <strong>Dexter Bishop</strong> is an ex-Google web developer where he worked for 3 years. He always had an interest in sports. He decided to start a news website together with his friend Betty Silva and colleague Jeremy Barrett, with whom he works for 5 years now.
         </td>
