@@ -35,6 +35,9 @@ window.addEventListener("load",start,false);
 function closeBgModal()
 {
     BgModal.style["display"]="none";
+    document.getElementsByTagName('body')[0].style.overflow='auto';
+   
+   
 }
 
 

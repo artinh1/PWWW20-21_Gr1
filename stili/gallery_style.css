@@ -8,15 +8,22 @@ body{min-width: 800px;
     margin:0;
     padding:0;
     font-size:13px;
-    font-family:Georgia,"Times New Roman", Times, serif;}
+    font-family:Georgia,"Times New Roman", Times, serif;
+    overflow:hidden;}
 
 
 main{padding: 5% 7% 5% 7%;
     
 }
 
-header h1{margin: 0px;
-             padding: 20px 10px 5px 60px;}
+header h1 {margin: 0px;
+             padding: 20px 10px 5px 60px;
+           }
+
+
+ header h1 a{ color: inherit;
+    text-decoration: none;
+}
 
 
 
@@ -29,7 +36,8 @@ header h1{margin: 0px;
     font font-size:50px
     margin-left: 50px;}
 
-header h4{margin: 0px   ;
+header h4{color: #818181;
+          margin: 0px;
          padding:5px 10px 5px 60px;
         
         
@@ -123,16 +131,16 @@ footer input{margin: 5px;
            padding:5px 10px 5px 10px; 
            font-size: 20px;
             margin-right: 5px;
-            border: none;
-    
-    
-    
+            border: none;  
+            outline: none;
 }
 
 #ShowLess{display: none;}
 
-
-
+#ShowMore:hover,#ShowLess:hover{
+    color: #593C5D;
+    background-color: white;
+}
 
 
 /*   modal styles    */
@@ -140,7 +148,7 @@ footer input{margin: 5px;
 #BgModal{
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0, 0.7);
+    background-color: rgba(0,0,0, 0.85);
     position: absolute;
     top: 0;
     display: flex;
@@ -183,6 +191,12 @@ footer input{margin: 5px;
 #subscribeButton{  background-color: gainsboro;
     font-weight: 500;
     width: 50%;
+}
+
+#BgModal .bg-content  #subscribeButton{
+    font-weight: 700;
+    color: white;
+    background-color: #593C5D;
 }
 
 

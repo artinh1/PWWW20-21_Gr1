@@ -5,17 +5,25 @@
     
     <title>Enquirer-News</title>
 	<meta charset="UTF-8">
+    <link rel="stylesheet" href="stili/contactUs_Style.css">
+     <link rel="icon" href="images/images_contact_us/icon.png">
 
+    
     
     </head>
 
 <body>
     
     <header>
-    <h1> Contact Us</h1>
-    
-    
-    </header>
+      <div class="topRow">
+         <p>kkkkk<p>
+         </div>
+          
+         <h1><a href="Homepage.html">Champions Enquirer Sports Magazine</a></h1>
+         <h4>NFL-NBA-MLB-UFC</h4>
+         
+          
+     </header> 
     
     
     
@@ -23,6 +31,9 @@
     
     
     <main>
+        
+        <h2>Contact Us</h2>
+        
         <p>Our Information is shown below</p>
     <ul>
         <li>City: Bristol</li>
@@ -33,6 +44,42 @@
         </ul>
     
     
+        <p>Thank you for visiting ESPN.com. If you need assistance with your espn.com account, please visit Member Services.<br>
+
+If your question is regarding ESPN Television Programming, please click here.<br>
+
+For the quickest answer to your questions, please check out our ESPN.com FAQ's by clicking here. If our FAQ's do not answer your questions, please contact ESPN.com Customer Care at 1-888-549-ESPN or fill out the form below to send us an email.<br>
+
+We value your opinion and will respond to your inquiry in a timely fashion.
+        </p>
+        
+        
+          
+        <div id="map"></div>
+        <script>
+            
+            
+            
+function initMap(){
+    var location ={lat: 41.673399,lng: -72.946647};
+    var map= new google.maps.Map(document.getElementById("map"), {
+        zoom:7,
+        center: location
+    });
+   
+    var marker = new google.maps.Marker({
+                                        position:location,
+                                        map:map});
+    
+}
+            
+            window.addEventListener("load",initMap,false);
+        
+        </script>
+        
+      <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTwd0JjfoSDW-yNqVkt2gK19P7w3YxxNA&callback=initMap"></script>
+        
     
     </main>
     
