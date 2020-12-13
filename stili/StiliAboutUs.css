@@ -1,0 +1,42 @@
+.main-header {
+	position:relative;
+	display:table;
+	width:100%;
+	height:100vh;
+	margin-bottom:5rem;
+	text-align:center;
+	background:#222 no-repeat center center;
+	background-size:cover;
+	overflow:hidden;
+}
+
+.post-head.main-header {
+	height:65vh;
+	min-height:180px;
+}
+
+
+
+.vertical {
+	display:table-cell;
+	vertical-align:middle;
+	 background: rgba(0,0,0,0.2);
+}
+
+.main-header-content.inner h1,.main-header-content.inner .post-meta,.main-header-content.inner {
+	color:#fff;
+}
+
+.post-title {
+	font-size:1.5rem;
+	font-style:italic;
+	line-height:1.2;
+	margin-bottom:0;
+	letter-spacing:-1px;
+	
+}
+
+.post-meta {
+		font-size:1.3rem;
+		margin-top:1rem;
+}
