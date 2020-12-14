@@ -47,9 +47,21 @@ main{margin: 20px;
      padding: 1% 7% 5% 7%;
     
 }
+ 
+p{font-size: 15px;}
 
-ContactUsDate p,h2{color: black;
-    display:inline-block;
+
+#ContactUsDate #Date{position: relative;
+    left: 20px; 
+    padding: 10px 30px 0px 5px;
+    margin: 0;
+    float: right;}
+
+#ContactUsDate #Contact{padding: 0;
+    margin: 0;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 800;
 }
 
 
@@ -60,14 +72,44 @@ ContactUsDate p,h2{color: black;
 
 
 
-main ul{ list-style: none;}
+main ul{ list-style: none;
+        padding-left: 0px;}
 
 main ul li{text-decoration: none;
            margin: 10px;
-            font-size: 20px;}
+            font-size: 15px;}
 
 
-form{ }
+form input[type=radio]{ 
+           margin: 5px;
+    border-color: aqua
+        
+}
+
+form textarea{width: 100%;
+            margin: 0px;
+            padding: 5px;
+            resize: none;
+           border-color: black;
+            border-width: medium;
+}
+
+ul li #mail{ color: black;
+          text-decoration: none;}
+
+#SubmitSuggestion{text-align: center;
+    margin-bottom: 5px;}
+
+#SubmitSuggestion #SubmitButton{width: 100%;
+              font-family:Georgia,"Times New Roman", Times, serif;
+           background-color: #593C5D;
+           border-radius: 7px;
+           color: white;
+           padding:5px 10px 5px 10px; 
+           font-size: 20px;
+            margin-r: ;
+            border: none;  
+            outline: none;}
 
 
 /*----footter---------------------------*/

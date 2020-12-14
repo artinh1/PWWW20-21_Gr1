@@ -163,7 +163,7 @@ footer input{margin: 5px;
     width: 30%;
     height: 22%;
     min-width: 300px;
-    min-height: 200px;
+    min-height: 220px;
     padding: 0px;
     position: relative;
 }
@@ -191,6 +191,7 @@ footer input{margin: 5px;
 #subscribeButton{  background-color: gainsboro;
     font-weight: 500;
     width: 50%;
+    
 }
 
 #BgModal .bg-content  #subscribeButton{
