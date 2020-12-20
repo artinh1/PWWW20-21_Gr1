@@ -5,6 +5,7 @@
     
     <title>Enquirer-Contact</title>
 	<meta charset="UTF-8">
+    <link href="stili/stilizimi2.css" rel="stylesheet" type="text/css" media="all">
     <link rel="stylesheet" href="stili/contactUs_Style.css">
      <link rel="icon" href="images/images_contact_us/icon.png">
 
@@ -14,18 +15,44 @@
 
 <body>
     
-    <header>
-      <div class="topRow">
-          <p>&#160; </p>
+           <div class="topRow">
          </div>
-          
-         <h1><a href="Homepage.html">Enquirer Sports Magazine</a></h1>
-         <h4>NFL-NBA-MLB-UFC</h4>
-         
-          
-     </header> 
+     <div class="wrapper row1">
+ <header id="header" class="clear">
+
+     
+     
+ <div id="logo">
+  <h1><a href="HomePage.html">Enquirer Sports Newspaper</a></h1>
+  <p>UFC-NBA-NFL-MLB</p>
+ </div> 
+
+  <nav>
+    <ul class="clear">
+        <li class="active"><a href="HomePage.html">Home</a></li>
+        <li><a href="#">Articles</a>
+          <ul>
+            <li><a href="UFC.html">UFC Lightweight Champion</a></li>
+            <li><a href="MLB.html">MLB for Draft prospects</a></li>
+            <li><a href="NBA.html">NBA Finals - LA. Lakers</a></li>
+            <li><a href="NFL.html">Week-12: NFL Season</a></li>
+            <li><a href="Exclusive_Page.html">Exclusive</a></li>                        
+          </ul>
+        </li>
+        <li><a href="About_Us.html">About Us</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+        <li><a href="Work.html">Work</a></li>
+      </ul>
+  </nav>
+
+    
+     
+     
+ </header>
+</div>
     
     
+     <img id="callCenterPic" src="images/images_contact_us/smiling-call-center-employees-sitting-in-line.jpg">
     
     
     
@@ -44,8 +71,8 @@
         
         <p>Our Information is shown below</p>
     <ul>
-        <li>City: Bristol</li>
-        <li>Adress: Walk of fame street NR.7</li>
+        <li>City: Dallas, Texas</li>
+        <li>Adress: Dirk Nowitzki NR.7</li>
         <li>Telephone: +34 98 67 34</li>
         <li>E-Mail:<a id="mail" href="mailto:EnquierSportsMagazine@gmail.com"> EnquierSportsMagazine@gmail.com</a></li>
     
@@ -83,7 +110,7 @@ We value your opinion and will respond to your inquiry in a timely fashion.
             
             
 function initMap(){
-    var location ={lat: 41.673399,lng: -72.946647};
+    var location ={lat: 32.778500,lng: -96.795028};
     var map= new google.maps.Map(document.getElementById("map"), {
         zoom:7,
         center: location
@@ -108,16 +135,84 @@ function initMap(){
     
     <footer>
     
-            <h2>You can also contact us on our Social Media accounts shown below</h2>
-        
-        <div id="SocialMedia">
-        <a href="#"><img src="images/fotot/fb.png"></a>
-        <a href="#"><img src="images/fotot/ig.jpg"></a>
-        <a href="#"><img src="images/fotot/twitter.png"></a>
-        <a href="#"><img src="images/fotot/youtube.png"></a>
+           
+
+<div class="wrapper row4">
+  <footer id="footer" class="clear"> 
+    <div class="one_quarter first">
+      <h2 class="title">Sports Latest</h2>
+      <article>
+        <div class="header">
+          <h2>UFC Lightweight Champion</h2>
+            <time datetime="2020-06-09">Tuesday, 9<sup>th</sup> June 2020</time>
         </div>
-            
-      <p>Copyright Content &copy; 2020</p>
+
+        <p>Ferguson will now have to wait a little longer to finally lock horns with Khabib Nurmagomedov after five postponements, now with Gaethje next in line after claiming the interim lightweight belt.</p>
+      </article>
+    </div>
+    
+
+<div class="one_quarter">
+      <h2 class="title">Quick Links</h2>
+      <nav>
+        <ul>
+          <li><a href="UFC.html">UFC-249: Fight Night</a></li>
+          <li><a href="NBA.html">NBA Finals 2020</a></li>
+          <li><a href="NFL.html">2020 NFL season</a></li>
+          <li><a href="MLB.html">MLB new season drafts</a></li>
+          <li><a href="About_Us.html">About Us</a></li>
+          <li><a href="Work.html">Working Nature</a></li>
+        </ul>
+      </nav>
+</div>
+
+
+<div class="one_quarter">
+      <h2 class="title">Company Basics</h2>
+      <address>
+      Enquirer Sports Newspaper<br>
+      United States<br>
+      Texas<br>
+      75001
+      </address>
+      <p>Tel: +1 806-559-9900<br>
+        Email: <a href="#">major_leage@ESN.com</a></p>
+</div>
+
+
+ <div class="one_quarter">
+      <h2 class="title">Newsletter</h2>
+      <form method="post" action="#">
+        <fieldset>
+          <legend>Newsletter Form:</legend>
+          <label for="nl_name">Name:</label>
+          <input type="text" name="nl_name" placeholder="Name">
+          <label for="nl_email">Email:</label>
+          <input type="text" name="nl_email" placeholder="Email Address">
+          <button type="submit" value="submit">Submit</button>
+        </fieldset>
+      </form>
+      <ul class="social">
+        <li><a href="https://www.facebook.com/"><img src="images/fotot/fb.png" alt="fb logo"></a></li>
+        <li><a href="https://www.youtube.com/"><img src="images/fotot/youtube.png" alt="youtube logo"></a></li>
+        <li><a href="https://twitter.com/"><img src="images/fotot/twitter.png" alt="twitter logo"></a></li>
+        <li><a href="https://www.instagram.com/"><img src="images/fotot/ig.jpg" alt="instagram logo"></a></li>
+        <li><a href="https://www.linkedin.com/"><img src="images/fotot/linkedin.png" alt="linkedin logo"></a></li>
+      </ul>
+</div>
+
+
+  </footer>
+</div>
+
+
+
+ <div class="wrapper row5">
+  <div id="copyright" class="clear"> 
+    <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">Enquirer Sports Newspaper</a></p>
+  </div>
+</div>
+
         
 </footer>
     
