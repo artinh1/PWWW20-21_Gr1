@@ -10,6 +10,81 @@
 	<meta charset="UTF-8">
   <link href="stili/stilizimi2.css" rel="stylesheet" type="text/css" media="all">
   <link rel="shortcut icon" type="image/png" href="images/fotot/WFi.png">
+  <style type="text/css">
+    #box1{
+        
+        text-align:center;
+        box-shadow:15px 15px 20px dimgray;
+        width:200px;
+        height:200px;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:30px;
+      }
+      h3{
+        margin-top:20px;
+        margin-bottom:20px;
+        text-align:center;
+      }
+      #theCanvas,#otherCanvas,svg {
+        margin-left:30px;
+        margin-bottom:30px;
+      }
+      #drawings{
+        text-align:center;
+      }
+      #gradientiLinear{
+        width:100%;
+        height:150px;
+        background: -webkit-gradient(
+          linear, left top, right bottom,
+          color-stop(14%,red),
+          color-stop(28%,orange),
+          color-stop(42%,yellow),
+          color-stop(56%,blue),
+          color-stop(70%,indigo),
+          color-stop(84%,violet)
+
+        );
+      }
+      #gradientiRadial{
+        width: 100%;
+        height: 150px;
+        padding: 5px 20px;
+        text-align: center;
+        
+        
+        background: -webkit-radial-gradient(
+            top left, red, orange, yellow
+
+          );
+
+      }
+
+      button{
+        padding:8px; font-size:13px; font-weight:bold; text-transform:uppercase; border:none; cursor:pointer;
+        color:#FFFFFF; background-color:#9F7FA9;
+        margin-bottom:30px;
+      }
+  </style>
+  <script type="text/javascript">
+  
+    
+    
+    function showHideText() {
+      var boxShadow = document.getElementById("boxShadow");
+      var graphicElements = document.getElementById("graphicElements");  
+      if (boxShadow.style.display === "none") {
+        boxShadow.style.display = "block";
+        graphicElements.style.display="block"
+        window.alert("You just showed the heading elements!");
+      } else {
+        boxShadow.style.display = "none";
+        graphicElements.style.display = "none";
+        window.alert("You just hid the heading elements!");
+      }
+    }
+  </script>  
 
 </head>
 
@@ -60,76 +135,64 @@
 
  </header>
 </div>
+
+<div id="gradientiLinear"></div>
+<div id="gradientiRadial">
+</div>
+<h3 id="boxShadow">Box shadow right-bottom:</h3>
+<div id = "box1">
+  <img  src="images/images_work/mj.jpg" alt="Michael Jordan photo">
   
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-<!-- Pjesa-5) Done -->
-
-      <div id="latest" class="clear">
-	      <ul class="clear">
-	        <li>
-	          <article>
-	            <h2>UFC Lightweight Champion</h2>
-	            <img src="images/fotot/Khabib225.jpg" alt="UFC225">
-	            <p>Can it be discused on who has the best chance at the title for the UFC LightWeight Championship after the fight night of UFC-249 which caused lots of upsets in the community?</p>
-	            <footer><a href="#">Read More &raquo;</a></footer>
-	          </article>
-	        </li>
-
-	        <li>
-	          <article>
-	            <h2>MLB for Draft prospects</h2>
-	            <img src="images/fotot/MLB225.jpg" alt="MLB225">
-	            <p>Major League Baseball today announced the formation of the MLB Draft League, which will become the first league in the country focused on top prospects who are eligible to be drafted by MLB Clubs that summer. </p>
-	            <footer><a href="#">Read More &raquo;</a></footer>
-	          </article>
-	        </li>
-
-	        <li>
-	          <article>
-	            <h2>NBA Finals - LA. Lakers</h2>
-	            <img src="images/fotot/Davis225.jpg" alt="NBA225">
-	            <p>In the longesta and most uniquely season in NBA history, the focus displayed by LeBron James, Anthony Davis and the rest of the Lakers through tragic events separated them from the rest of the league.</p>
-	            <footer><a href="#">Read More &raquo;</a></footer>
-	          </article>
-	        </li>
-
-	        <li>
-	          <article>
-	            <h2>Week-12: NFL Season</h2>
-	            <img src="images/fotot/Brady225.jpg" alt="NFL225">
-	            <p>The Titans demolished the Colts, the Chiefs won again and the Broncos, with no quarterback, were crushed in a week defined as much by the coronavirus as the action on the field.</p>
-	            <footer><a href="#">Read More &raquo;</a></footer>
-	          </article>
-	        </li>
-	      </ul>
-      </div>
-
-    <div class="clear"></div>      
-    </main>
 </div>
 
+<h3 id="graphicElements">Canvas, svg and some of their elements:</h3>
+<div id="drawings">
+    <canvas id="theCanvas" width="100" height="100" style="border: 1px solid purple;">
+      Your browser does not support the canvas element.
+    </canvas>
+    
+    <canvas id="otherCanvas" width="100"; height="100" style="border: 1px solid purple;">
+      Your browser does not support the canvas element.
+    </canvas>
+    <svg height="100" width="100">
+      <polygon points="0,0 100,0 100,100 0,100" style="fill:red; stroke: purple; stroke-width:3px">
+      Your browser does not support svg.
+    </svg>
+    <svg height="100" width="100">
+      <polygon points="0,100 30,0 70,0 100,100" style="fill:green; stroke: blue; stroke-width:3px">
+      Your browser does not support svg.
+    </svg>
+    <br>
+    <button onclick="showHideText()">Show/hide heading texts</button>
+</div>
+    <script>
+      var c = document.getElementById("theCanvas");
+      var ctx = c.getContext("2d");
+      ctx.fillStyle="#FF0000";
+      ctx.beginPath();
+      ctx.moveTo(0,100);
+      ctx.lineTo(50,0);
+      ctx.lineTo(100,100);
+      ctx.lineTo(0,100);
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    
+      ctx.stroke();
+      ctx.closePath();
+      ctx.fillText("Triangle",30,50);
+    </script>
+    <script>
+      var c = document.getElementById("otherCanvas");
+      var ctx = c.getContext("2d");
+      var img = new Image();
+      img.src="images/images_work/smiley.png";
+      img.onload=function(){ctx.drawImage(img, 7,7);}
+      
+
+      
+    </script>  
+
+
+
 
 
 <!-- Pjesa-6) Done ... -->
