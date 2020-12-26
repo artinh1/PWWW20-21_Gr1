@@ -1,7 +1,4 @@
-
-<!--Kodi im HTML-->
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -43,31 +40,21 @@
 
    td img{border-radius:50%;}
 
-
+.topRow{ padding:16px;
+         font-size:12px; 
+         font-weight:normal;
+         background-color: #55415F;
+         display: flex;
+}
 
   </style>
 
 
 </head>
 
-
-
-<!-- Pjesa-1) Done -->
-
-<body>
-  <div class="wrapper row0">
-    <div id="topbar" class="clear">
-    <ul>
-      <li><a href="#">Sign Up</a></li>
-      <li><a href="#">Login</a></li>
-      <li><a href="#">RSS Feeds</a></li>
-    </ul>
+    <div class="topRow">
     </div>
-  </div>  
 
-
-
-<!-- Pjesa-2) Done ... -->
 
 <div class="wrapper row1">
  <header id="header" class="clear">
@@ -79,18 +66,17 @@
 
   <nav>
     <ul class="clear">
-        <li class="active"><a href="HomePage.html">Home</a></li>
-        <li><a href="#">Articles</a>
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="#last">Articles</a>
           <ul>
             <li><a href="UFC.html">UFC Lightweight Champion</a></li>
             <li><a href="MLB.html">MLB for Draft prospects</a></li>
             <li><a href="NBA.html">NBA Finals - LA. Lakers</a></li>
             <li><a href="NFL.html">Week-12: NFL Season</a></li>
-
             <li><a href="Exclusive_Page.html">Exclusive</a></li>                        
           </ul>
         </li>
-             <li><a href="About_Us.html">About Us</a></li>
+             <li class="active"><a href="About_Us.html">About Us</a></li>
         <li><a href="Contact.html">Contact Us</a></li>
         <li><a href="Work.html">Work</a></li>
       </ul>
@@ -148,9 +134,6 @@
 
 
 
-<!-- Pjesa-6) Done ... -->
-
-
 <div class="wrapper row4">
   <footer id="footer" class="clear"> 
     <div class="one_quarter first">
@@ -165,17 +148,17 @@
       </article>
     </div>
     
-
+<a name="last"></a>
 <div class="one_quarter">
       <h2 class="title">Quick Links</h2>
       <nav>
         <ul>
-          <li><a href="#">UFC-249: Fight Night</a></li>
-          <li><a href="#">NBA Finals 2020</a></li>
-          <li><a href="#">2020 NFL season</a></li>
-          <li><a href="#">MLB new season drafts</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Working Nature</a></li>
+          <li><a href="UFC.html">UFC-249: Fight Night</a></li>
+          <li><a href="NBA.html">NBA Finals 2020</a></li>
+          <li><a href="NFL.html">2020 NFL season</a></li>
+          <li><a href="MLB.html">MLB new season drafts</a></li>
+          <li><a href="About_Us.html">About Us</a></li>
+          <li><a href="Contact.html">Contact Info</a></li>
         </ul>
       </nav>
 </div>
@@ -190,13 +173,13 @@
       75001
       </address>
       <p>Tel: +1 806-559-9900<br>
-        Email: <a href="#">major_leage@ESN.com</a></p>
+        Email: <a href="Contact.html">major_leage@ESN.com</a></p>
 </div>
 
 
  <div class="one_quarter">
       <h2 class="title">Newsletter</h2>
-      <form method="post" action="#">
+      <form method="post" action="About_Us.html">
         <fieldset>
           <legend>Newsletter Form:</legend>
           <label for="nl_name">Name:</label>
@@ -223,15 +206,8 @@
 
  <div class="wrapper row5">
   <div id="copyright" class="clear"> 
-    <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">Enquirer Sports Newspaper</a></p>
-  </div>
+    <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - Enquirer Sports Newspaper</p>
+	</div>
 </div>
-
-
-
-
-
-<script src="skripta/jquery.min.js"></script> 
-<script src="skripta/jquery.flexslider-min.js"></script>
 </body>
 </html>
