@@ -27,7 +27,10 @@
         graphicElements.style.display = "none";
         window.alert("You just hid the heading elements!");
       }
+
+
     }
+
   </script>  
 
 </head>
@@ -114,6 +117,14 @@
     <div id="box2"><h3>Translation</h3></div>
     <div id="box3"><h3>Skew</h3></div>
     <div id="box4"><h3>Rotation</h3></div>
+<h3>Usage of output element:</h3>
+<div id="outputForm">
+  <form oninput="result.value=parseInt(theRange.value)+parseInt(otherRange.value)" >
+  <input type="range" id="theRange"  value="50" min="0" max="100" /> +
+  <input type="range" id="otherRange" value="10" min="0" max="100" /> =
+  <output name="result" for="theRange otherRange">60</output>
+</form>
+</div>
    
     
     
@@ -133,6 +144,8 @@
       ctx.stroke();
       ctx.closePath();
       ctx.fillText("Triangle",30,50);
+
+
     </script>
     <script>
       var c = document.getElementById("otherCanvas");
