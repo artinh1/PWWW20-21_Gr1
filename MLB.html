@@ -8,7 +8,6 @@
   <link href="stili/stilizimi2.css" rel="stylesheet" type="text/css" media="all">
   <link rel="shortcut icon" type="image/png" href="images/fotot/MLBFi.png">
   <link href="stili/StiliX.css" rel="stylesheet" type="text/css" media="all">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,700,700italic|Playfair+Display:400,700,400italic,700italic"/>
 <style type="text/css">
 .topRow{ padding:16px;
          font-size:12px; 
@@ -18,6 +17,18 @@
 }
 #idi{
 	color: yellow;
+}
+
+#hijezim{
+text-shadow: 1px 1px 2px green;
+}
+
+@font-face{
+  font-family: "roboto";
+  src: url("font-face/HelveticaNeueBold.ttf");
+}
+#wrap{
+  word-wrap: break-word;
 }
 </style>
 </head>
@@ -49,9 +60,9 @@
             <li><a href="Exclusive_Page.html">Exclusive</a></li>                        
           </ul>
         </li>
-        <li><a href="About_Us.html">About Us</a></li>
-        <li><a href="Contact.html">Contact Us</a></li>
-        <li><a href="Work.html">Work</a></li>
+        <li><a href="About_Us.html" target="_blank">About Us</a></li>
+        <li><a href="Contact.html" target="_blank">Contact Us</a></li>
+        <li><a href="Work.html" target="_blank">Work</a></li>
       </ul>
   </nav>
 
@@ -62,7 +73,7 @@
 <header class="main-header post-head " style="background-image: url(images/fotot/MLBWall.png)">
 	<div class="vertical">
 		<div class="main-header-content inner">
-			<h1 class="post-title">Top Prospects for 2020 MLB Draft Season</h1>		
+			<h1 class="post-title" id="hijezim">Top Prospects for 2020 MLB Draft Season</h1>		
 			<section class="post-meta">
 			<time>July 23rd - 2020</time>
 			</section>	
@@ -73,7 +84,7 @@
 
 <a name="mover"></a>
 <main class="content">
-	<div>
+	<div id="wrap">
 	   <article class="featured">
 	   <section class="news-text">
 	   
@@ -110,7 +121,18 @@
 		<p>The trade deadline, which is only five weeks away, should offer additional intrigue, as more than half the league could possibly still
 		be in contention when it arrives.
 		</p>
-		
+		<p>
+		 When it came to this the GM who drafted Mike Trout! Tony Reagins gave his input on this with Kim Ng :
+		 <figure>
+         <figcaption>Listen to the GM : </figcaption>
+         <audio
+         controls
+         src="audio/GM_Chronicles.mp3">
+            Your browser does not support the
+            <code>audio</code> element.
+        </audio>
+        </figure>
+		</p>		
 		<p>And Finally the trade deadline, which is only five weeks away, should offer additional intrigue, as more than half the league could possibly still
 		be in contention when it arrives.
 		</p>
