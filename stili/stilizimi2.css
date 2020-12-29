@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0; padding:0; font-size:18px; font-weigh
 #topbar ul{margin:0; padding:0; list-style:none; float:right;}
 #topbar ul li{display:inline; margin-left:10px; padding-left:10px;}
 #topbar ul li:first-child{margin:0; padding:0; border:none;}
+#topbar ul li button{background-color:#55415F; color: white; text-transform: uppercase; border:0px; font-family:Georgia, "Times New Roman", Times, serif; font-size: 12px;}
 
 /* Header
 ---------------------------------------------------------------------------------------------------------------*/
@@ -236,3 +237,82 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
 
 /*Third Fajll Stilimi*/
 #topbar, #header, #breadcrumb, #container, #footer, #copyright{display:block; width:960px; margin:0 auto;}
+
+
+/*Modals*/
+
+
+#SignUpModal,#LogInModal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.85);
+    position: fixed;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+#SignUpModal .bg-content, #LogInModal .bg-content{margin: 0px;
+    background-color: white;
+    text-align: center;
+    width: 50%;
+    height: 44%;
+    padding: 0px;
+    position: fixed;
+    border-color: black;
+    border-width: 3px;
+    overflow: hidden;
+}
+
+
+#SignUpModal .bg-content #modalSignUpButton, #LogInModal .bg-content #modalLogInButton
+{ font-weight: 700;
+    color: white;
+    background-color: #55415F;
+    width: 50%;
+   }
+
+ #SignUpModal .bg-content p, #LogInModal .bg-content p{
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+
+.bg-content input{width: 50%;
+                  margin:12px auto;
+                  display: block;
+                   padding: 4px;} 
+
+#SignUpCloseButton, #LogInCloseButton {background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    outline: inherit;
+    cursor: pointer;
+    position: absolute;
+    top: 6px;
+    right: 4px;
+    font-size: 30px;
+    transform: rotate(45deg);
+    
+}
+
+
+.modalTopbar{ background-color: #55415F;
+    margin: 0px;
+padding: 15px;
+}
+
+.modalTopbar p{text-align: left;
+       padding: 0px;
+         margin: 0px;
+        font-size: 15px;
+         font-weight: 600;
+}
+
+#LogInModal .bg-content{width: 30%; height: 22%;}
+
