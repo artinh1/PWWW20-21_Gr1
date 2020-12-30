@@ -10,7 +10,7 @@ body{min-width: 800px;
     padding:0;
     font-size:13px;
     font-family:Georgia,"Times New Roman", Times, serif; 
-    overflow: hidden;
+    
   
       }
 
@@ -19,9 +19,15 @@ label{font-size: 15px;
 
 
 main{padding: 1% 7% 2% 7%;
+      background-image:url("champion.png");
+    background-size:10% 100%;
+    background-attachment: fixed;
+  background-repeat: no-repeat;
+    background-origin:inherit;
 }
 
-
+span{font-style: italic;
+     font-weight: bold;}
 
 #NFLSection h1,#NBASection h1
 ,#MLBSection h1,#UFCSection h1{ padding: 5px;
