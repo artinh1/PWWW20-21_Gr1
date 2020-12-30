@@ -16,16 +16,20 @@
     
     
     function showHideText() {
-      var boxShadow = document.getElementById("boxShadow");
-      var graphicElements = document.getElementById("graphicElements");  
-      if (boxShadow.style.display === "none") {
-        boxShadow.style.display = "block";
-        graphicElements.style.display="block"
-        window.alert("You just showed the heading elements!");
+      var box4 = document.getElementById("box4");
+      var buttonSvg = document.getElementById("buttonSvg");
+       
+      if (box4.style.webkitAnimationPlayState == "paused") {
+        box4.style.webkitAnimationPlayState = "running";
+        buttonSvg.style.fill="red";
+        triangleSvg.style.fill="green";
+        window.alert("You just resumed the animations!");
       } else {
-        boxShadow.style.display = "none";
-        graphicElements.style.display = "none";
-        window.alert("You just hid the heading elements!");
+        box4.style.webkitAnimationPlayState = "paused";
+        
+        buttonSvg.style.fill="green";
+        triangleSvg.style.fill="red";
+        window.alert("You just paused the animations!");
       }
 
 
@@ -82,42 +86,64 @@
 
  </header>
 </div>
+  <div id="gradientiLinearWrapper">
 
-<div id="gradientiLinear"></div>
-<div id="gradientiRadial">
+  <header class="main-header post-head " style="background-image: url(images/images_work/working.jpg)">
+  <div class="vertical">
+    <div class="main-header-content inner">
+      <h1 class="post-title">Millions of users worldwide! Rapid news and analytics on most viewed sporting events!</h1>  
+      <section class="post-meta">
+      
+      </section>  
+    </div>  
+  </div>
+</header>
 </div>
-<h3 id="boxShadow">Box shadow right-bottom:</h3>
-<div id = "box1">
-  <img  src="images/images_work/mj.jpg" alt="Michael Jordan photo">
+
+
+
+<div id="box4"><h3>Work</h3></div>
+</div>
+<div id="gradientiRadialWrapper"><div id="boxElement2">ESN offers career opportunities, email us your CV today! 
+  <br><canvas id="otherCanvas" width="200px" height="200px">Your browser does not support the canvas element</canvas>
+
+</div></div>
+
   
 </div>
 
-<h3 id="graphicElements">Canvas, svg and some of their elements:</h3>
-<div id="drawings">
-    <canvas id="theCanvas" width="100" height="100" style="border: 1px solid purple;">
-      Your browser does not support the canvas element.
-    </canvas>
+
+ 
     
-    <canvas id="otherCanvas" width="100"; height="100" style="border: 1px solid purple;">
+    <div id="box3"><span>Flexible work hours according to your needs. Amazing working environment with good view offices all around the building!</span><br><canvas id="theCanvas" width="30px" height="30px"  >
       Your browser does not support the canvas element.
-    </canvas>
-    <svg height="100" width="100">
-      <polygon points="0,0 100,0 100,100 0,100" style="fill:red; stroke: purple; stroke-width:3px">
+    </canvas></div>
+
+
+<div id="drawings">
+   
+    
+    
+    <button onclick="showHideText()"><svg height="10" width="10">
+      <polygon id="triangleSvg" points="0,0 0,10 10,5 0,0" style="fill:green;">
       Your browser does not support svg.
-    </svg>
-    <svg height="100" width="100">
-      <polygon points="0,100 30,0 70,0 100,100" style="fill:green; stroke: blue; stroke-width:3px">
+    </svg>Play/pause animations  <svg  height="10" width="10">
+      <polygon id="buttonSvg" points="0,0 10,0 10,10 0,10" style="fill:red; stroke: purple; stroke-width:3px">
       Your browser does not support svg.
-    </svg>
-    <br>
-    <span id="bgColChange">Animated background color!</span><br><br>
-    <button onclick="showHideText()">Show/hide heading texts</button>
+    </svg></button>
+    
+
+    
+    
+    
+    
+    
+   
 </div>
-    <h3>Transformations with animations:</h3>
-    <div id="box2"><h3>Translation</h3></div>
-    <div id="box3"><h3>Skew</h3></div>
-    <div id="box4"><h3>Rotation</h3></div>
-<h3>Usage of output element:</h3>
+
+<h3>Page Test:</h3>
+   
+
 <div id="outputForm">
   <form oninput="result.value=parseInt(theRange.value)+parseInt(otherRange.value)" >
   <input type="range" id="theRange"  value="50" min="0" max="100" /> +
@@ -133,17 +159,23 @@
 
       var c = document.getElementById("theCanvas");
       var ctx = c.getContext("2d");
-      ctx.fillStyle="#FF0000";
+      ctx.fillStyle="#00FF00";
       ctx.beginPath();
-      ctx.moveTo(0,100);
-      ctx.lineTo(50,0);
-      ctx.lineTo(100,100);
-      ctx.lineTo(0,100);
+      
+      ctx.moveTo(15,0);
+      ctx.lineTo(0,15);
+      ctx.lineTo(13,15);
+      ctx.lineTo(13,30);
+      ctx.lineTo(17,30);
+      ctx.lineTo(17,15);
+      ctx.lineTo(30,15);
+      ctx.lineTo(15,0);
 
     
       ctx.stroke();
+      ctx.fill();
       ctx.closePath();
-      ctx.fillText("Triangle",30,50);
+      
 
 
     </script>
@@ -151,7 +183,7 @@
       var c = document.getElementById("otherCanvas");
       var ctx = c.getContext("2d");
       var img = new Image();
-      img.src="images/images_work/smiley.png";
+      img.src="images/images_work/it_jobs.jpg";
       img.onload=function(){ctx.drawImage(img, 7,7);}
       
 
