@@ -264,8 +264,10 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
     position: fixed;
     border-color: black;
     border-width: 3px;
-    overflow: hidden;
+    overflow-y:auto;
+    overflow-x: hidden;
 }
+
 
 
 #SignUpModal .bg-content #modalSignUpButton, #LogInModal .bg-content #modalLogInButton
