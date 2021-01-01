@@ -39,7 +39,8 @@ window.addEventListener("load",start,false);
 function closeBgModal()
 {
     LogInModal.style["display"]="none";
-    SignUpModal.style["display"]="none";
+    SignUpModal.style["display"]="none";	
+	event.preventDefault();
     document.getElementsByTagName('body')[0].style.overflow='auto';
      
 }
