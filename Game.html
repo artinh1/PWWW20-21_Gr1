@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Loje Bazike ne HTML me CSS dhe JS</title>
+    <style>
+	canvas{background: #eee; display: block; margin: 0 auto;}
+	</style>
+</head>
+<body style="margin-left:80px; margin-top:150px; background-color:hsla(50, 33%, 25%, .75);">
+<canvas id="myCanvas" width="480" height="300"></canvas>
+<script>
+    var pq = "Loje bazike ne HTML me CSS dhe JS"
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var ballRadius = 10;
+    var x = canvas.width/2;
+    var y = canvas.height-30;
+    var dx = 2;
+    var dy = -2;
+    var paddleHeight = 10;
+    var paddleWidth = 75;
+    var paddleX = (canvas.width-paddleWidth)/2;
+    var rightPressed = false;
+    var leftPressed = false;
+    var brickRowCount = 5;
+	var panoDraws = new panoVizatim(500,320);
+	var imageDraws = new testResult(0,0);
+    var brickColumnCount = 3;
+    var brickWidth = 75;
+    var brickHeight = 20;
+    var brickPadding = 10;
+    var brickOffsetTop = 30;
+    var brickOffsetLeft = 30;
+    var score = 0;
+    var lives = 3;
+	
+	var data = new Date();
+	var days = ["Dielle","Hene","Marte","Merkure","Enjte","Premte","Shtune"];
+    var ditaSotme = days[data.getDay()];
+    var ditaSotmeS = ditaSotme.toString();	
+	
+	panoVizatim.prototype.ratio = 5.25;
+	testResult.prototype.testimiFillues = false;
+	
+    var bricks = [];
+    for(var c=0; c<brickColumnCount; c++)
+	{
+        bricks[c] = [];
+        for(var r=0; r<brickRowCount; r++)
+		  {bricks[c][r] = { x: 0, y: 0, status: 1 };}
+    }
+
+    document.addEventListener("keydown", keyDownHandler, false);
+    document.addEventListener("keyup", keyUpHandler, false);
+    document.addEventListener("mousemove", mouseMoveHandler, false);
+
+class Point
+{
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  static displayName = "Pika";
+  static distance(a, b)
+  {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+	
+	if(dx > Number.MAX_VALUE || dy > Number.MAX_VALUE)
+	 {
+		if(isNaN(dx) || isNaN(dy))
+		 {return -1;}
+	 }
+	
+const power_p1 = dx.toExponential(2);
+const power_p2 = dy.toExponential(2);	
+	
+    return Math.sqrt(power_p1 - power_p2);
+  }
+}
+
+const p1 = new Point(5, 5);
+const p2 = new Point(10, 10);
+var res = pq.match(/HTML/g);
+
+
+console.log(Point.displayName);
+console.log(Point.distance(p1, p2)); // 7.0710678118654755
+
+
+
+    function keyDownHandler(e)
+	 {
+        if(e.keyCode == 39)
+		 {rightPressed = true;}
+        else if(e.keyCode == 37)
+		 {leftPressed = true;}
+    }
+    function keyUpHandler(e)
+	{
+        if(e.keyCode == 39)
+		 {rightPressed = false;}
+        else if(e.keyCode == 37)
+		 {leftPressed = false;}
+    }
+    function mouseMoveHandler(e)
+	{
+        var relativeX = e.clientX - canvas.offsetLeft;
+        if(relativeX > 0 && relativeX < canvas.width)
+		 {paddleX = relativeX - paddleWidth/2;}
+    }
+    function collisionDetection() {
+        for(var c=0; c<brickColumnCount; c++) {
+            for(var r=0; r<brickRowCount; r++) {
+                var b = bricks[c][r];
+                if(b.status == 1) {
+                    if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+                        dy = -dy;
+                        b.status = 0;
+                        score++;
+                        if(score == brickRowCount*brickColumnCount) {
+                            alert("JU KENI FITUAR URIME!" + " me kaq jeta : " + lives.toString());
+                            document.location.reload();}
+                    }
+                }
+            }
+        }
+    }
+
+	function testResult(brickRowCount, brickColumnCount)
+	 {
+		var brickRowCount2 = brickRowCount;
+		var brickColumnCount2 = brickColumnCount;
+		
+		if(score == brickRowCount2*brickColumnCount2)
+		 {
+			alert("Kalkulim i sakte");
+			document.location.reload();
+	     }
+		else if(Math.abs(brickRowCount2) > 0 && Math.abs(brickColumnCount2) > 0)
+		 {
+		    brickRowCount2 = math.round(brickRowCount2);
+			brickColumnCount2 = math.round(brickColumnCount2);
+		 }
+		
+		brickRowCount2++;
+		brickColumnCount2++;
+	 }
+
+    function drawBall()
+	{ 
+	  try{
+        ctx.beginPath();
+        ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+        ctx.fillStyle = "red";
+        ctx.fill();
+		 }
+	  catch(err)
+	   {document.getElementById("demo").innerHTML = err.name;}	 
+       
+	  finally{ctx.closePath();}
+	}
+		
+    function drawPaddle()
+	{
+	  try{	
+        ctx.beginPath();
+        ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+        ctx.fillStyle = "black";
+        ctx.fill();
+		 }
+	  catch(err)
+	   {document.getElementById("demo").innerHTML = err.name;}	 
+       
+	  finally{ctx.closePath();}
+	}
+		
+    function drawBricks() {
+        for(var c=0; c<brickColumnCount; c++) {
+            for(var r=0; r<brickRowCount; r++) {
+                if(bricks[c][r].status == 1) {
+                    var brickX = (r*(brickWidth+brickPadding))+brickOffsetLeft;
+                    var brickY = (c*(brickHeight+brickPadding))+brickOffsetTop;
+                    bricks[c][r].x = brickX;
+                    bricks[c][r].y = brickY;
+                    ctx.beginPath();
+                    ctx.rect(brickX, brickY, brickWidth, brickHeight);
+                    ctx.fillStyle = "#008080";
+                    ctx.fill();
+                    ctx.closePath();}
+            }
+        }
+    }
+	
+    function drawScore(){
+        ctx.font = "16px Arial";
+        ctx.fillStyle = "#008081";
+        ctx.fillText("Piket: " + score, 8, 20);
+    }
+	
+	function panoVizatim(height, width)
+	 {
+		this.height = height;
+		this.widt = width;
+	 }
+
+function ndryshoTekstin() {
+  var str = document.getElementById("demo1").innerHTML; 
+  var res = str.replace("Llogarit", "Tekst i Ri");
+  document.getElementById("demo1").innerHTML = res;
+}	
+	
+    function drawLives(){
+        ctx.font = "16px Arial";
+        ctx.fillStyle = "green";
+        ctx.fillText("Jetat: "+lives, canvas.width-65, 20);}
+
+    function draw(){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBricks();
+        drawBall();
+        drawPaddle();
+        drawScore();
+        drawLives();
+        collisionDetection();
+
+        if(x + dx > canvas.width-ballRadius || x + dx < ballRadius)
+		 {dx = -dx;}
+        if(y + dy < ballRadius)
+		 {dy = -dy;}
+        else if(y + dy > canvas.height-ballRadius) {
+            if(x > paddleX && x < paddleX + paddleWidth)
+			 {dy = -dy;}
+            else {
+                lives--;
+                if(!lives) {
+                    alert("LOJA PERFUNDOI, HUMBET :(, ju urojme nje dite te " + ditaSotmeS + " te mbare.");
+                    document.location.reload();}
+                else {
+                    x = canvas.width/2;
+                    y = canvas.height-30;
+                    dx = 3;
+                    dy = -3;
+                    paddleX = (canvas.width-paddleWidth)/2;}
+            }
+        }
+
+        if(rightPressed && paddleX < canvas.width-paddleWidth)
+		 {paddleX += 7;}
+        else if(leftPressed && paddleX > 0)
+		 {paddleX -= 7;}
+
+        x += dx;
+        y += dy;
+        requestAnimationFrame(draw);
+    }
+
+function kerkoRegressi() {
+  var stringuNefjale = "A mund ta gjejme Kompanine Google ketu?";
+  var patterna = /google/i;
+  var result = stringuNefjale.match(patterna);
+  document.getElementById("demo2").innerHTML = result;
+}	
+
+function kerkoRegressi2() {
+  var stringuNefjale2 = "A mund te gjejme nje zgjidhje te Problemit?";
+  var patterna2 = /te/g;
+  var result1 = stringuNefjale2.match(patterna2);
+  document.getElementById("demo3").innerHTML = result1;
+}
+
+function kryejTestimin() {
+  var stringuNefjale3 = "Kompania jone ka arritur nje rritje mbi 50% kete vit.";
+  var patterna3 = new RegExp("nje");
+  var result2 = patterna3.test(stringuNefjale3);
+  document.getElementById("demo4").innerHTML = result2;
+}
+
+function kryejTestimin2() {
+  var stringuNefjale4 = "Pershendetje, shpresoj se po kaloni bukur!";
+  var patterna4 = /Pershendetje/g;
+  var result3 = patterna4.exec(stringuNefjale4);
+  document.getElementById("demo5").innerHTML = result3;
+}
+	
+    draw();
+</script>
+<p id="demo"></p>
+	<div style="border: 2px solid black; margin-right: 200px;">
+		<p id="demo1">Ndryshimi i tekstit permes metodes replace() : Llogarit Numrin </p>
+		<button onclick="ndryshoTekstin()">Provoje!</button>
+		<p>Shfrytezimi i Modifikuesve "i" tek Regress Expressions per tekstin ne vijim : 'A mund ta gjejme Kompanine Google ketu?'</p>
+		<button onclick="kerkoRegressi()">Provoje!</button>
+		<p id="demo2"></p>
+		<p>Shfrytezimi i Modifikuesve "g" tek Regress Expressions per tekstin ne vijim : 'A mund te gjejme nje zgjidhje te Problemit?'</p>
+		<button onclick="kerkoRegressi2()">Provoje!</button>
+		<p id="demo3"></p>
+		<p>Shfrytezimi i metodes "test()" tek Regress Expressions per tekstin ne vijim : 'Kompania jone ka arritur nje rritje mbi 50% kete vit.'</p>
+		<button onclick="kryejTestimin()">Provoje!</button>
+		<p id="demo4"></p>
+		<p>Shfrytezimi i metodes "exec()" tek Regress Expressions per tekstin ne vijim : 'Pershendetje, shpresoj se po kaloni bukur!'</p>
+		<button onclick="kryejTestimin2()">Provoje!</button>
+		<p id="demo5"></p>		
+	</div>
+</body>
+</html>
