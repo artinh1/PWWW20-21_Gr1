@@ -11,6 +11,7 @@
   <link href="stili/stilizimi2.css" rel="stylesheet" type="text/css" media="all">
   <link href="stili/work_style.css" rel="stylesheet" type="text/css" media="all">
   <link rel="shortcut icon" type="image/png" href="images/fotot/WFi.png">
+  <script type="text/javascript" src="skripta/WorkScript.js"></script>
   <script type="text/javascript">
   
     
@@ -20,7 +21,7 @@
       var buttonSvg = document.getElementById("buttonSvg");
       var heading = document.getElementById("canvasHead");
       var arrow = document.getElementById("theCanvas");
-      
+      var test = false;
        
       if (box4.style.webkitAnimationPlayState == "paused") {
         box4.style.webkitAnimationPlayState = "running";
@@ -28,23 +29,11 @@
         triangleSvg.style.fill="green";
         heading.innerHTML="The animations are running!";
         var ctx = arrow.getContext("2d");
-      ctx.fillStyle="#00FF00";
-      ctx.beginPath();
+        ctx.fillStyle="#00FF00";
+        ctx.fill();
       
-      ctx.moveTo(15,0);
-      ctx.lineTo(0,15);
-      ctx.lineTo(13,15);
-      ctx.lineTo(13,30);
-      ctx.lineTo(17,30);
-      ctx.lineTo(17,15);
-      ctx.lineTo(30,15);
-      ctx.lineTo(15,0);
-
-    
-      ctx.stroke();
-      ctx.fill();
-      ctx.closePath();
         arrow.style.transform="rotate(0deg)";
+        test = true;
 
         window.alert("You just resumed the animations!");
       } else {
@@ -54,24 +43,14 @@
         triangleSvg.style.fill="red";
         heading.innerHTML="The animations are paused!"
         
-      var ctx = arrow.getContext("2d");
-      ctx.fillStyle="#FF0000";
-      ctx.beginPath();
+        var ctx = arrow.getContext("2d");
+         ctx.fillStyle="#FF0000";
       
-      ctx.moveTo(15,0);
-      ctx.lineTo(0,15);
-      ctx.lineTo(13,15);
-      ctx.lineTo(13,30);
-      ctx.lineTo(17,30);
-      ctx.lineTo(17,15);
-      ctx.lineTo(30,15);
-      ctx.lineTo(15,0);
-
-    
-      ctx.stroke();
-      ctx.fill();
-      ctx.closePath();
+        ctx.fill();
         arrow.style.transform="rotate(180deg)";
+        test=false;
+
+      
         
         window.alert("You just paused the animations!");
       }
@@ -88,16 +67,9 @@
 <!-- Pjesa-1) Done -->
 
 <body>
-  <div class="wrapper row0">
-    <div id="topbar" class="clear">
-    <ul>
-      <li><a href="#">Sign Up</a></li>
-      <li><a href="#">Login</a></li>
-      <li><a href="#">RSS Feeds</a></li>
-    </ul>
-    </div>
-  </div>  
 
+    <div class="topRow">
+    </div>
 
 
 <!-- Pjesa-2) Done ... -->
@@ -147,14 +119,17 @@
 
 
 <div id="box4"><h3>Work</h3></div>
-</div>
+
 <div id="gradientiRadialWrapper"><div id="boxElement2">ESN offers career opportunities, email us your CV today! 
-  <br><canvas id="otherCanvas" width="200px" height="200px">Your browser does not support the canvas element</canvas>
+  <br><canvas id="otherCanvas" width="200px" height="116px">Your browser does not support the canvas element</canvas><br>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus facilisis nibh eget ullamcorper. Nam lacinia, leo sed semper pulvinar, nisi enim maximus libero, id scelerisque neque ipsum vitae ante.  </p>
+  <button id="signUpButton">Sign up today!</button>
 
 </div></div>
 
   
-</div>
+
 
 
  
@@ -189,15 +164,24 @@
    
 </div>
 
-<h3>Page Test:</h3>
+<h3>Rate our website:</h3>
    
 
 <div id="outputForm">
   <form oninput="result.value=parseInt(theRange.value)+parseInt(otherRange.value)" >
-  <input type="range" id="theRange"  value="50" min="0" max="100" /> +
-  <input type="range" id="otherRange" value="10" min="0" max="100" /> =
-  <output name="result" for="theRange otherRange">60</output>
+ Service: <input type="range" id="theRange"  value="25" min="0" max="50" /> + <br><br>
+  Accessibility: <input type="range" id="otherRange" value="25" min="0" max="50" /> =
+  <output name="result" for="theRange otherRange">50</output>
 </form>
+</div>
+<h3>Rate with stars (dragNdrop):</h3>
+<div id="rate">
+<div id="starDiv"><img id="drag1" src="images/images_work/star.png" draggable="true" ondragstart="drag(event)" ><img id="drag1" src="images/images_work/star.png" draggable="true" ondragstart="drag(event)" ><img id="drag1" src="images/images_work/star.png" draggable="true" ondragstart="drag(event)" ></div>
+<div id="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<button onClick="window.location.reload();">Rate!</button><br>
+<form action="Game.html"><button onclick="window.location.href='Game.html';">
+      Play our game!
+    </button
 </div>
    
     
@@ -321,11 +305,37 @@
   </div>
 </div>
 
+<!---SingUp---------------------------->
+<div id="SignUpModal">
+    <div class="bg-content">
+        <div class="modalTopbar">
+            <p>Enquirer Sports Magazine</p>
+       <button id="SignUpCloseButton">+</button>
+        </div>  
+        <form method="post" autocomplete="on" action="#">
+            <p>Please type in your information to get started with your account</p>
+        <input type="text" placeholder="Name" autofocus>
+        <input type="text" placeholder="Surname">
+            <input type="email" placeholder="E-mail">
+        <input type="password" placeholder="Password">
+        <p>Please send me occasional information and offers about Enquirer ports Magazine and other products and services to my e-mail adress</p>
+           <input type="checkbox" id="ConfirmOffer" name="ConfirmOffer" value="Offer">
+           <label for="ConfirmOffer">I agree and would like to recieve other products and services</label><br>
+            <hr>
+           <p> By creating an account, you agree to our Terms of Use and acknowledge that you have read our Privacy Policy, Cookies Policy and EU Privacy Rights.</p>
+            
+            <input type="submit"  value="Sign Up" id="modalSignUpButton">
+       
+        </form>
+        </div>
+    </div>
+
 
 
 
 
 <script src="skripta/jquery.min.js"></script> 
 <script src="skripta/jquery.flexslider-min.js"></script>
+
 </body>
 </html>
