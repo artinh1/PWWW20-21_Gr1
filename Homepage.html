@@ -289,12 +289,12 @@
             <p>Enquirer Sports Magazine</p>
        <button id="SignUpCloseButton">+</button>
         </div>  
-        <form method="post" autocomplete="on" action="#">
+        <form method="post" autocomplete="on" onsubmit="return false">
             <p>Please type in your information to get started with your account</p>
-        <input type="text" placeholder="Name" autofocus>
-        <input type="text" placeholder="Surname">
-            <input type="email" placeholder="E-mail">
-        <input type="password" placeholder="Password">
+        <input id="SignUpName" type="text" placeholder="Name" autofocus>
+        <input id="SignUpSurname" type="text" placeholder="Surname">
+        <input id="SignUpEmail" type="email" placeholder="E-mail">
+        <input id="SignUpPassword" type="password" placeholder="Password">
         <p>Please send me occasional information and offers about Enquirer ports Magazine and other products and services to my e-mail adress</p>
            <input type="checkbox" id="ConfirmOffer" name="ConfirmOffer" value="Offer">
            <label for="ConfirmOffer">I agree and would like to recieve other products and services</label><br>
@@ -314,10 +314,10 @@
             <p>Enquirer Sports Magazine</p>
        <button id="LogInCloseButton">+</button>
         </div>  
-        <form method="post" autocomplete="on">
+        <form method="post" autocomplete="on" onsubmit="return false">
             <p>Please type in your information to Log In</p>
-        <input type="email" placeholder="E-mail" autofocus>
-        <input type="password" placeholder="Password">
+        <input id="LogInEmail" type="email" placeholder="E-mail" autofocus>
+        <input id="LogInPassword" type="password" placeholder="Password">
             
             <input type="submit"  value="Log In" id="modalLogInButton">
         
