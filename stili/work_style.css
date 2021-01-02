@@ -1,4 +1,9 @@
-
+.topRow{ padding:16px;
+         font-size:12px; 
+         font-weight:normal;
+         background-color: #55415F;
+         display: flex;
+}
 
 #box1{
         
@@ -112,7 +117,7 @@
         margin-right:auto;
         padding:5px;
         width: 50%;
-        height: 150px;
+        height: 230px;
         box-shadow:15px 15px 20px dimgray;
         
         
@@ -127,7 +132,7 @@
       }
       #boxElement2{
         width:100%;
-        height:150px;
+        height:230px;
 
         background-color:#55415F;
         color:white;
@@ -139,19 +144,21 @@
       button{
         padding:8px; font-size:13px; font-weight:bold; text-transform:uppercase; border:none; cursor:pointer;
         color:#FFFFFF; background-color:#9F7FA9;
+        border-radius:5px;
+        margin-bottom:10px;
+
+
         
       }
 
 
        
-      #box2:hover{
-        -webkit-animation:translation 3s infinite linear;
-      }
+      
       #box3{
         margin-left:auto;
         margin-right:auto;
         margin-top:65px;
-        margin-bottom:60px;
+        margin-bottom:30px;
         background-color:#55415F;
         color:white;
         height:35px;
@@ -176,6 +183,7 @@
         color:white;
         height:30px;
         width:300px;
+        border-radius:5px;
 
          -webkit-animation:rotationSkew 8s infinite linear;
 
@@ -190,19 +198,24 @@
         margin-bottom:30px;
       }
 
-     
-      
-      @-webkit-keyframes skewX{
-        from{-webkit-transform:skewX(0deg);}
-        50%{-webkit-transform:skewX(30deg);}
-        to{-webkit-transform:skewY(0deg);}
+      #rate{
+        text-align: center;
+      }
+      #starDiv, #dragDiv {
+        width: 200px; 
+        height: 50px; 
+        margin-bottom: 10px;
+        border: 3px solid #aaaaaa ;
+        margin-left: auto;
+        margin-right: auto;
+       
       }
 
-      @-webkit-keyframes translation{
-        from{-webkit-transform:tranlate(0px,0px);}
-        50%{-webkit-transform:translate(50px,50px);}
-        to{-webkit-transform:translate(0px,0px);}
-      }
+     
+      
+      
+
+   
       @-webkit-keyframes rotationSkew{
         from{-webkit-transform:rotate(0deg);}
         16%{-webkit-transform:rotateX(90deg);}
