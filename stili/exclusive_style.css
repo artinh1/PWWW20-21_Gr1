@@ -19,7 +19,7 @@ label{font-size: 15px;
 
 
 main{padding: 1% 7% 2% 7%;
-      background-image:url("champion.png");
+      background-image:url("champion.png"),url("trophy.png");
     background-size:10% 100%;
     background-attachment: fixed;
   background-repeat: no-repeat;

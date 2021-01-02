@@ -5,7 +5,7 @@ var ShowLessButton;
 var BgModal;
 var CloseButton;
 var subscribeButton;
-
+var SubscribeFormValues=[];
 
 function start()
 {
@@ -16,6 +16,9 @@ function start()
      BgModal=document.getElementById("BgModal");
      CloseButton=document.getElementById("CloseButton");
      subscribeButton=document.getElementById("subscribeButton");
+    
+    SubscribeFormValues.push(document.getElementById("SubscribeBankInformation"));
+    SubscribeFormValues.push(document.getElementById("SubscribeId"));
     
     
     CloseButton.addEventListener("click",closeBgModal,false);
@@ -34,9 +37,15 @@ window.addEventListener("load",start,false);
 
 function closeBgModal()
 {
+    if(event.target.id===("subscribeButton"))
+        { event.preventDefault();
+           if(validateForm(SubscribeFormValues)){}
+            else{return false;}
+        }
     BgModal.style["display"]="none";
     document.getElementsByTagName('body')[0].style.overflow='auto';
-   
+     event.preventDefault();
+    clearForm(SubscribeFormValues);
    
 }
 
@@ -75,3 +84,24 @@ function showLess()
         }
 
 }
+
+
+
+function validateForm(formValues)
+{
+    for(var i=0; i<formValues.length; i++)
+        {
+            if(formValues[i].value===""){window.alert("The input for "+formValues[i].getAttribute("placeholder")+" field is missing");
+                                          return false;}
+        }
+   return true;
+}
+
+function clearForm(formValues)
+{
+    for(var i=0; i<formValues.length; i++)
+        {
+            formValues[i].value="";
+        }
+}
+
