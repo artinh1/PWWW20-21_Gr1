@@ -3,6 +3,7 @@ var SignUpCloseButton
 var SignUpButton;
 var LogInButton;
 var LogOutButton;
+var DeleteAccountButton;
 var ModalSignUpButton;
 var ModalLogInButton;
 var SignUpModal;
@@ -20,6 +21,7 @@ function start()
     SignUpButton=document.getElementById("signUpButton");
     LogInButton=document.getElementById("logInButton");
     LogOutButton=document.getElementById("logOutButton");
+    DeleteAccountButton=document.getElementById("deleteAccountButton");
     ModalSignUpButton=document.getElementById("modalSignUpButton");
     ModalLogInButton=document.getElementById("modalLogInButton");
     SignUpModal=document.getElementById("SignUpModal");
@@ -42,6 +44,7 @@ function start()
     SignUpButton.addEventListener("click",openBgModal,false);
     LogInButton.addEventListener("click",openBgModal,false);    
     LogOutButton.addEventListener("click",logOut,false);
+    DeleteAccountButton.addEventListener("click",deleteAccount,false);
     
 }
 
@@ -52,10 +55,18 @@ window.addEventListener("load",start,false);
 
 function logOut()
 {
-    sessionStorage.clear();
-    //localStorage.clear();
+    if(sessionStorage.getItem("LoggedIn")===null){window.alert("You are not logged in.")}
+    
+    else{sessionStorage.clear();}  
 }
 
+
+function deleteAccount()
+{
+    if(sessionStorage.getItem("LoggedIn")===null){window.alert("You are not logged in.")}
+    
+    else{localStorage.clear();}   
+}
 
 
 function closeBgModal()

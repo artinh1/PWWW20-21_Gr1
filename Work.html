@@ -184,8 +184,41 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus facilisis
       Play our game!
     </button>
   </div>
+        
+        
+<div id="webworker">
+       <p>Press the button and the web worker will multiply 5 and 2</p>  
+      <button id="webWorkerButton" name="webWorker" type="button">Web Worker</button> 
+        
+</div>
 
-   
+    <script>
+        var WorkerButton=document.getElementById("webWorkerButton");
+        WorkerButton.addEventListener("click",callWebWorker,false);
+        
+        function callWebWorker(){
+        if(window.Worker)
+            {
+                var worker= new Worker("skripta/webWorker.js");  
+                
+                var message={ multi: {number1:5,number2:2} };
+                
+                  worker.onerror = function (event) {
+                   window.alert("error ocurred while Web Worker was working");
+                     };
+                
+                
+                worker.postMessage(message);
+                
+                worker.onmessage=function(e)
+                {
+                    window.alert("The webWorker calculated the result: "+e.data.result);
+                };
+            }
+        }
+        
+        </script>
+        
     
     
     
